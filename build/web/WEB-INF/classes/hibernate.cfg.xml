@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.default_catalog">ScienceAlerts</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/SA11</property>
+        <!--<property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>-->
+        <property name="hibernate.connection.pool_size">0</property>
+        <property name="hibernate.connection.username">userName</property>
+        <property name="hibernate.connection.password">passWord</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="connection.autocommit">true</property>
+        <!--<property name="hibernate.transaction.auto_close_session">true</property>-->
+        <property name="hibernateShowSql">false</property>
+        <property name="hibernate.generate_statistics">false</property>
+        <property name="hibernate.use_sql_comments">false</property>
+        <property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property> 
+        <property name="connection.autoReconnect">true</property>
+        <property name="connection.autoReconnectForPools">true</property>
+        <property name="connection.is-connection-validation-required">true</property>
+        <property name="hibernate.c3p0.min_size">1</property>
+        <property name="hibernate.c3p0.max_size">200</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">250</property>
+        <property name="hibernate.c3p0.preferredTestQuery">SELECT 1;</property>
+        <property name="hibernate.c3p0.testConnectionOnCheckout">true</property>
+        <property name="hibernate.c3p0.acquireRetryAttempts">4</property>
+        <property name="hibernate.c3p0.acquireRetryDelay">5000</property>
+        <property name="hibernate.c3p0.autoCommitOnClose">true</property>
+        <property name="hibernate.c3p0.breakAfterAcquireFailure">false</property>
+        <mapping class="com.appzone.sciencealerts.hibernate.entity.SmsSender" package="com/appzone/sciencealerts/hibernate/entity" resource="com/appzone/sciencealerts/hibernate/entity/SmsSender.hbm.xml"/>
+        <mapping class="com.appzone.sciencealerts.hibernate.entity.IncomeSmsTransaction" package="com/appzone/sciencealerts/hibernate/entity" resource="com/appzone/sciencealerts/hibernate/entity/IncomeSmsTransaction.hbm.xml"/>
+        <mapping class="com.appzone.sciencealerts.hibernate.entity.ScienceAlerts" package="com/appzone/sciencealerts/hibernate/entity" resource="com/appzone/sciencealerts/hibernate/entity/ScienceAlerts.hbm.xml"/>
+        <mapping class="com.appzone.sciencealerts.hibernate.entity.AppComments" package="com/appzone/sciencealerts/hibernate/entity" resource="com/appzone/sciencealerts/hibernate/entity/AppComments.hbm.xml"/>
+        <mapping class="com.appzone.sciencealerts.hibernate.entity.Help" package="com/appzone/sciencealerts/hibernate/entity" resource="com/appzone/sciencealerts/hibernate/entity/Help.hbm.xml"/>
+        <mapping class="com.appzone.sciencealerts.hibernate.entity.SmsTransaction"  package="com/appzone/sciencealerts/hibernate/entity" resource="com/appzone/sciencealerts/hibernate/entity/SmsTransaction.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

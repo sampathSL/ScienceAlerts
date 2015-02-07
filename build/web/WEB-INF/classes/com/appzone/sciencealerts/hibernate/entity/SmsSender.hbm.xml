@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 4, 2012 7:32:17 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="ScienceAlerts" name="com.appzone.sciencealerts.hibernate.entity.SmsSender" table="smssender">
+    <id name="id" type="java.lang.Long">
+      <column name="Id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="address" type="string">
+      <column length="100" name="Address" not-null="true"/>
+    </property>
+    <property name="userName" type="string">
+      <column length="100" name="UserName"/>
+    </property>
+    <property name="isReg" type="string">
+      <column length="1" name="IsReg" not-null="true"/>
+    </property>
+    <property name="marks" type="java.lang.Long">
+      <column name="Marks"/>
+    </property>
+    <property name="isSchedularActive" type="string">
+      <column length="1" name="IsSchedularActive" not-null="true"/>
+    </property>
+    <property name="joinedDate" type="timestamp">
+      <column length="19" name="JoinedDate"/>
+    </property>
+    <property name="lastActiveTime" type="timestamp">
+      <column length="19" name="LastActiveTime"/>
+    </property>
+    <property name="isActive" type="string">
+      <column length="1" name="IsActive" not-null="true"/>
+    </property>
+    <set inverse="true" name="appcommentses">
+      <key>
+        <column name="SenderId"/>
+      </key>
+      <one-to-many class="com.appzone.sciencealerts.hibernate.entity.AppComments"/>
+    </set>
+    <set inverse="true" name="appcommentses_1">
+      <key>
+        <column name="SenderId"/>
+      </key>
+      <one-to-many class="com.appzone.sciencealerts.hibernate.entity.AppComments"/>
+    </set>
+  </class>
+</hibernate-mapping>
